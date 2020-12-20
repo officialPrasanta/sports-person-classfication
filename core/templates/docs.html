@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/docs.css')}}">
+
+{% endblock %}
+
+
+{% block body %}
+<div class="container" style="margin-top:30px">
+    <div class="row">
+        <div class="col-sm-3">
+            <h3>Project Overview</h3>
+            <p style="text-align: justify; padding-top: 8px; padding-bottom: 12px;">Created a tool that predicts the
+                images of certain sports celebrities</p>
+            <h4>Notes</h4>
+            <ul class="nav flex-column" style="font-size: 13px; padding-left: 0px;">
+                <li class="nav-item">
+                    <a class="nav-link" href="#cleaning">Data Cleaning</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#model-building">Model Building</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#backend">Backend</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#resources">Resources Used</a>
+                </li>
+            </ul>
+            <hr class="d-sm-none">
+        </div>
+
+        <div class="col-sm-8">
+            <div id="cleaning">
+                <h4>Cleaning the Data</h4>
+                <p>
+                    Here the images has been cropped and resized and sorted in respective folders.
+                    <img class="img-fluid" src="../static/img/two.png" alt=""> <br>
+                    <img class="img-fluid" src="../static/img/three.png" alt="">
+                </p>
+            </div>
+            <br><br>
+            <div id="model-building">
+                <h4>Model Building</h4>
+                <p>Here the data is split into train and tests sets with a test size of 30%. We tried four different
+                    models and tuned them using GridSearchCV. We further evaluated them using Accuracy matrics. <br><br>
+
+                <ul class="list-group">
+                    <li class="list-group-item">svm : 0.870968</li>
+                    <li class="list-group-item">logistic_regression : 0.851613 </li>
+                    <li class="list-group-item">random_forest : 0.825806</li>
+                    <li class="list-group-item">k_neighbor : 0.767742</li>
+                    <li class="list-group-item">decision_tree : 0.574194</li>
+                </ul>
+
+                <br>
+
+                <img class="img-fluid" src="../static/img/model.png" alt=""></p>
+            </div>
+            <br><br>
+            <div id="backend">
+                <h4>Backend</h4>
+                <p>The web server is built on flask API endpoint that was hosted on a local webserver. The API endpoint
+                    takes in a request as image and returns a prediction. Finally we gave it a form of a web
+                    application.</p>
+            </div>
+            <br><br>
+            <div id="resources">
+                <h4>Codes and Resources Used</h4>
+                <p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Python Version: 3.8.5</li>
+                    <li class="list-group-item">Scikit-Learn Version : 2.2.0</li>
+                    <li class="list-group-item">Packages: numpy, matplotlib, flask, pandas, Opencv, scikit-learn</li>
+                    <li class="list-group-item">For Web Framework Requirements: pip install -r requirements.txt</li>
+                    <li class="list-group-item">This Dataset is scrapped from google images using Selenium. </li>
+                    <li class="list-group-item">For UI Design: Figma</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

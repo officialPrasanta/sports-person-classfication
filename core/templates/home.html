@@ -1,0 +1,105 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+
+<style>
+  body {
+    background: #e6e6e6;
+  }
+
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+{% endblock %}
+
+
+{% block body %}
+<div class="container" style="background: #fff; padding: 30px 30px; margin-bottom: 30px;">
+
+
+  <div class="row">
+    <div class=" col-xl-6">
+      <!-- <img class="img-fluid" src="../static/img/ai-facial-recognition-887x488 (1).jpg" alt=""> -->
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../static/img/Carousel/ai-facial-recognition-887x488 (1).jpg" width="1080" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="../static/img/Carousel/maria.jpg" width="1080" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="../static/img/Carousel/messi.jpg" width="1080" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="../static/img/Carousel/roger.jpg" width="1080" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="../static/img/Carousel/serena.jpg" width="1080" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="../static/img/Carousel/virat.jpg" width="1080" height="500">
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+
+    </div>
+    <div class=" col-xl-6" style="text-align: justify; color:#525252">
+      <p>Machine learning is a subfield of artificial intelligence (AI). The goal of machine learning generally is to
+        understand
+        the structure of data and fit that data into models that can be understood and utilized by people.
+      </p>
+
+      <p>This is a project that implements Artificial Intelligence to classify 5 sports celebrities namely Lionel messi,
+        Maria Sharapova, Roger Frederer, Virat Kohli, Serena Williams.This project includes working with and cleaning
+        large
+        amounts of data, learning from scratch and implementing state of the art techniques, resorting to innovative
+        thinking to solve challenges. To achieve this task, we developed a Machine Learning model that yielded an
+        average
+        accuracy of 84% over the caterogies.</p>
+
+    </div>
+
+
+
+  </div>
+  <br><br>
+  <div class="card" style="margin-left: 10rem; margin-right: 10rem; ">
+    <div class="card-header">
+      Quote
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote text-center">
+        <p><i>"Technology gives us power, but it does not and cannot tell us how to use that power. Thanks to
+            technology,
+            we can instantly communicate across the world, but it still doesn't help us know what to say."</i></p>
+        <footer class="blockquote-footer">Jonathan Sacks</footer>
+      </blockquote>
+    </div>
+  </div>
+  <br><br>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+
+
+{% endblock %}
+
+
+{% block body %}
+<form action="/tool", method="POST", enctype="multipart/form-data">
+<div class="container"></div> 
+    <div class="row">
+      <div class=" col-md-6 col-xl-6">
+        <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+          <input id="upload" type="file" name="image" onchange="readURL(this);" class="form-control border-0">
+          <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+          <div class="input-group-append">
+              <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+          </div>
+      </div>
+
+      <!-- Uploaded image area-->
+      <p class="font-italic text-white text-center">The image uploaded will be rendered inside the box below.</p>
+
+      <div class="image-area mt-4"><img id="imageResult" src="../static/img/download.jpg" alt="" class="img-fluid rounded shadow-sm mx-auto d-block" ></div>
+
+      <!-- <button type="button" class="btn btn-primary btn-lg btn-block">Classify</button> -->
+      <input type="submit" class="btn btn-primary btn-lg btn-block" value="submit">
+      </div>
+    </form>
+      <div class="col-md-6 col-xl-6" >
+
+        <table>
+          {% for i in data %}
+          <tr>
+            <th>Class:</th>
+            <td>{{i['class']}}</td>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <th>Probalility</th>
+          </tr>
+          {% for name, probalility in zip(i['class_dictionary'],i['class_probability']) %}
+            <tr>
+              <td>
+                {{name}}
+              </td>
+              <td>{{probalility}}</td>
+            </tr>
+            {% endfor %}
+          {% endfor %}
+        </table>
+         
+      </div>
+      
+    </div> 
+
+    <br><br>
+    {% endblock %}
